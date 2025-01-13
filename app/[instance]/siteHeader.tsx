@@ -20,7 +20,7 @@ interface HeaderProps {
   clientConfig: { siteId: string };
 }
 
-const socket = io("https://api.headlesshost.com");
+// const socket = io("https://api.headlesshost.com");
 
 export default function SiteHeader({ common, instanceId, clientConfig }: HeaderProps) {
   const [showNav, setShowNav] = useState(false);
