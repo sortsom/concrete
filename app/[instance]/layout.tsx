@@ -3,7 +3,7 @@ import LeftNav from "@/components/leftNav";
 import SiteHeader from "./siteHeader";
 import SiteFooter from "./siteFooter";
 import { getMap, getCommon, getClientConfig } from "@/app/lib/api";
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 export default async function Layout({ children, params }: { children: React.ReactNode; params: { instance: string } }) {
   const common = await getCommon(params.instance);
   const map = await getMap(params.instance);
@@ -16,6 +16,7 @@ export default async function Layout({ children, params }: { children: React.Rea
         <aside className="hidden lg:block lg:w-1/4 xl:w-1/6">
           <LeftNav globals={common?.globals} instanceId={params.instance} />
         </aside>
+        <SpeedInsights />
         {children}
       </div>
       <SiteFooter />
@@ -33,6 +34,6 @@ export default async function Layout({ children, params }: { children: React.Rea
 }
 
 export const metadata: Metadata = {
-  title: "Knowledgebase",
-  description: "Knowledgebase",
+  title: "Concrete Coding",
+  description: "Concrete Coding",
 };
